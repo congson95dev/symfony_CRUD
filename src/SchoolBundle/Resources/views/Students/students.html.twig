@@ -1,0 +1,36 @@
+{% extends '@School/Layout/main_layout.html.twig'%}
+
+{% block title %}Students Page{% endblock %}
+
+{% block body %}
+
+	<!-- flash message -->
+	{% for success_message in app.session.flashbag.get('message') %}
+		<div class="success-message alert alert-success">{{ success_message }}</div>
+	{% endfor %}
+
+	<a class="btn btn-primary add_student_btn" href="{{ absolute_url(asset('')) }}app_dev.php/addstudent">Add new student</a>
+	
+	<!-- normal way -->
+	<table>
+			<tr>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>Age</th>
+				<th>Action</th>
+			</tr>
+		{% for student in students %}
+			<tr>
+				<td >{{ student.name }}</td>
+				<td>{{ student.gender }}</td>
+				<td>{{ student.age }}</td>
+				<td>
+					<!-- {{ absolute_url(asset('')) }} = fudu.symfony.net/ -->
+					<a href="{{ absolute_url(asset('')) }}app_dev.php/student/{{ student.id }}">view</a>
+					<a href="{{ absolute_url(asset('')) }}app_dev.php/updatestudent/{{ student.id }}">edit</a>
+					<a href="{{ absolute_url(asset('')) }}app_dev.php/deletestudent/{{ student.id }}">delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

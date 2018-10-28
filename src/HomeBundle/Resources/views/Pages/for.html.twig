@@ -1,0 +1,29 @@
+{% extends '@Home/Layout/main_layout.html.twig'%}
+
+{% block title %}For loop{% endblock %}
+{% block body %}
+
+	<!-- normal way -->
+	<table style="border: 1px solid white;">
+		{% for user in data if user.active %}
+			<tr style="border: 1px solid white;">
+				<td style="border: 1px solid white;">{{ user.name }}</td>
+				<td style="border: 1px solid white;">{{ user.age }}</td>
+			</tr>
+		{% else %}
+			<h1>No user found</h1>
+		{% endfor %}
+	</table>
+
+	<!-- 1st way to include a template -->
+ 	{{ include('@Home/Pages/users.html.twig') }}
+
+	<!-- 2nd way to include a template -->
+	<table style="border: 1px solid white;">
+	 	{% for user in data if user.active %}
+			{{ include('@Home/Pages/users2.html.twig', {'user': user}) }}
+	 	{% endfor %}
+	</table>
+	
+	<img src="{{ asset('images/slide_1.jpg') }}">
+{% endblock %}

@@ -1,0 +1,49 @@
+body{
+	background-image: url("../images/beautiful_girl.jpg");
+	color: white !important;
+	width: 100%;
+}
+
+table{
+	text-align: center !important;
+	border: 1px solid white !important;
+	margin: 2% auto;
+	width: 50%;
+}
+
+table tr{
+	height: 40px;
+}
+
+table tr th{
+	text-align: center !important;
+	border: 1px solid white;
+}
+table tr td{
+	border: 1px solid white;
+}
+
+table tr td a{
+	margin-left: 20px;
+}
+
+.add_student_btn{
+	margin: 10% auto 0 25%;
+}
+
+table.student_table{
+	margin: 20% auto;
+}
+
+.success-message{
+	text-align: center;
+}
+
+form{
+	margin: 15% 0 0 25%;
+	width: 50%;
+}
+
+.save-btn{
+	margin-top: 20px;
+}

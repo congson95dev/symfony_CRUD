@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Main Layout{% endblock %}</title>
+        {% block stylesheets %}
+           <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+           <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script style="text/javascript" src="{{ asset('js/jquery-1.9.1.js') }}"></script>
+            <script style="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <script style="text/javascript" src="{{ asset('js/myscript.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
