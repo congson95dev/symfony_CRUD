@@ -1,0 +1,32 @@
+{% extends '@School/Layout/main_layout.html.twig'%}
+
+{% block title %}Classes Page{% endblock %}
+
+{% block body %}
+
+	<!-- flash message -->
+	{% for success_message in app.session.flashbag.get('message') %}
+		<div class="success-message alert alert-success">{{ success_message }}</div>
+	{% endfor %}
+
+	<a class="btn btn-primary add_class_btn" href="{{ absolute_url(asset('')) }}app_dev.php/addclass">Add new class</a>
+	
+	<!-- normal way -->
+	<table>
+			<tr>
+				<th>Name</th>
+				<th>Action</th>
+			</tr>
+		{% for class in classes %}
+			<tr>
+				<td >{{ class.name }}</td>
+				<td>
+					<!-- {{ absolute_url(asset('')) }} = fudu.symfony.net/ -->
+					<a href="{{ absolute_url(asset('')) }}app_dev.php/class/{{ class.id }}">view</a>
+					<a href="{{ absolute_url(asset('')) }}app_dev.php/updateclass/{{ class.id }}">edit</a>
+					<a href="{{ absolute_url(asset('')) }}app_dev.php/deleteclass/{{ class.id }}">delete</a>
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

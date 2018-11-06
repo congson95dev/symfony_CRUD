@@ -31,6 +31,10 @@ table tr td a{
 	margin: 10% auto 0 25%;
 }
 
+.add_class_btn{
+	margin: 10% auto 0 25%;
+}
+
 table.student_table{
 	margin: 20% auto;
 }
@@ -46,4 +50,8 @@ form{
 
 .save-btn{
 	margin-top: 20px;
+}
+
+.content_page{
+	margin: 5% 0 0 25%;
 }

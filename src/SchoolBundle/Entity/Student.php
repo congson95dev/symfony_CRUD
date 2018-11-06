@@ -43,6 +43,12 @@ class Student
     private $age;
 
 
+     /**
+     * @ORM\ManyToOne(targetEntity="Classes")
+     * @ORM\JoinColumn(name="class_id", referencedColumnName="id")
+     */
+    private $class;
+
     /**
      * Get id
      *
@@ -124,5 +130,28 @@ class Student
     {
         return $this->age;
     }
-}
 
+    /**
+     * Set class
+     *
+     * @param \SchoolBundle\Entity\Classes $class
+     *
+     * @return Student
+     */
+    public function setClass(\SchoolBundle\Entity\Classes $class = null)
+    {
+        $this->class = $class;
+
+        return $this;
+    }
+
+    /**
+     * Get class
+     *
+     * @return \SchoolBundle\Entity\Classes
+     */
+    public function getClass()
+    {
+        return $this->class;
+    }
+}

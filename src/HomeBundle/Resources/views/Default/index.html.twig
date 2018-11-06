@@ -1,1 +1,15 @@
-Hello World!
+{% extends '@School/Layout/main_layout.html.twig'%}
+
+{% block title %}Students Page{% endblock %}
+
+{% block body %}
+	<div class="content_page">
+		<h1>Hello stranger!</h1><br><br>
+
+		<h2>Where do u want to go next?</h2>
+		<br><br>
+		
+		<a class="btn btn-primary" href="{{ url('view_all_students_route') }}">Students</a>
+		<a class="btn btn-primary" href="{{ url('view_all_classes_route') }}">Classes</a>
+	</div>
+{% endblock %}
